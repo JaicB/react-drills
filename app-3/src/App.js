@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 
 class App extends Component {
   constructor() {
@@ -8,27 +7,30 @@ class App extends Component {
 
     this.state = {
       filterString: "",
-      guitars: ["Fender", "Washburn", "Seagull", "Martin", "Gibson", "Guild", "Yamaha", "Epiphone"]
+      foods: ["broccoli", "peanut butter", "etc."]
     };
   }
-  
+
   handleChange(filter) {
     this.setState({ filterString: filter });
   }
-  
+
   render() {
-    let guitarsDisplayed = this.state.guitars.filter((element, index) => {
+    let foodsToDisplay = this.state.foods.filter((element, index) => {
       return element.includes(this.state.filterString);
-    }).map((element, index) => {
-      return <h2 key={index}>{element}</h2>;
-    });
+    })
+    .map((element, index) => {
+      return <h2 key={index}>{element}</h2>
+    })
 
     return (
       <div className="App">
-        <input onChange={e => this.handleChange(e.target.value)} type="text" /> {guitarsDisplayed}
+        <input onChange={e => this.handleChange(e.target.value)} type="text"/>
+        {foodsToDisplay}
       </div>
-    );
+    )
   }
+
 }
 
 export default App;

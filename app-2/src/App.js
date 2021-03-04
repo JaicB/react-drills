@@ -1,20 +1,21 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 
 class App extends Component {
   constructor() {
     super();
 
     this.state = {
-      guitars: ["Fender", "Washburn", "Seagull", "Martin", "Gibson", "Guild", "Yamaha", "Epiphone"]
-    };
+      items: ["ball", "bat", "glove", "cork"]
+    }
   }
+
   render() {
-    let guitarsDisplayed = this.state.guitars.map((element, index) => {
-      return <h2 key={index}>{element}</h2>
-    });
-    return <div className="App"> {guitarsDisplayed}</div>
+    let baseballStuffs = this.state.items.map((element, index) => {
+      return <h1 key={index}>{element}</h1>
+    })
+
+    return <div className="App">{baseballStuffs}</div>
   }
 }
 
