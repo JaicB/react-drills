@@ -7,17 +7,17 @@ class App extends Component {
 
     this.state = {
       message: ""
-    }
+    };
   }
 
-  handleChange(value) {
-    this.setState({ message: value })
+  inputChange(value) {
+    this.setState({ message: value });
   }
 
   render() {
     return(
       <div className="App">
-        <input onChange={e => this.handleChange(e.target.value)} type="text"/>
+        <input onChange={e => this.inputChange(e.target.value)} type="text" />
         <p>{this.state.message}</p>
       </div>
     )
